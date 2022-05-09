@@ -1,0 +1,34 @@
+
+<div id="heading">
+    <a>BANK-APP</a>
+</div>
+<div>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+        <nav class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/home" routerLinkAction="active">HOME</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/accountdetails" routerLinkAction="active">ACCOUNT DETAILS</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/withdraw" routerLinkAction="active">WITHDRAW</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/deposit" routerLinkAction="active">DEPOSIT</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/amounttransfer" routerLinkAction="active">AMOUNT TRANSFER</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/transactiondetails" routerLinkAction="active">TRANSACTION DETAILS</a>
+                </li>
+            </ul>
+        </nav>
+        <a class="btn btn-outline-success my-2 my-sm-0" id="logout">LOG-OUT</a>
+    </nav>
+</div>
+
+
+<router-outlet></router-outlet>
