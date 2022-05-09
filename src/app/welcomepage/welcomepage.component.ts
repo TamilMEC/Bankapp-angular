@@ -10,6 +10,7 @@ export class WelcomepageComponent implements OnInit {
   ImagePath2: string;
   ImagePath3: string;
   ImagePath4: string;
+  ImagePath5: string;
   
 
   constructor() { 
@@ -17,6 +18,7 @@ export class WelcomepageComponent implements OnInit {
     this.ImagePath2 = '/assets/images/Leading-technology-trends-in-digital-banking.jpg'
     this.ImagePath3 = '/assets/images/istockphoto-938430346-612x612.jpg'
     this.ImagePath4 = '/assets/images/ten-reasons-internet-banking-opt.jpg'
+    this.ImagePath5 = '/assets/images/Bankappicon.jpg'
   }
 
   ngOnInit(): void {

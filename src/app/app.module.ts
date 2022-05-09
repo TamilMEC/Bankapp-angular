@@ -12,21 +12,31 @@ import { AmounttransferComponent } from './amounttransfer/amounttransfer.compone
 import { TransactiondetailsComponent } from './transactiondetails/transactiondetails.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminmenuComponent } from './adminmenu/adminmenu.component';
+import { ListusersComponent } from './listusers/listusers.component';
+import { ActivateuserComponent } from './activateuser/activateuser.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomepageComponent,
     WithdrawComponent,
-    BrowserModule,
-    HttpClientModule,
     DepositComponent,
+    AccountdetailsComponent,
     AmounttransferComponent,
     TransactiondetailsComponent,
     UsermenuComponent,
-    routingComponents
+    routingComponents,
+    AdminmenuComponent,
+    ListusersComponent,
+    ActivateuserComponent,
+    HomeComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
   ],

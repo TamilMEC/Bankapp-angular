@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usermenu.component.css']
 })
 export class UsermenuComponent implements OnInit {
+  ImagePath: string;
 
-  constructor() { }
+  constructor() { 
+    this.ImagePath = '/assets/images/Bankappicon.jpg'
+
+  }
 
   ngOnInit(): void {
   }

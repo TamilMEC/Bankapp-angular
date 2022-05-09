@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountdetailsComponent } from './accountdetails/accountdetails.component';
+import { ActivateuserComponent } from './activateuser/activateuser.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdminmenuComponent } from './adminmenu/adminmenu.component';
 import { AmounttransferComponent } from './amounttransfer/amounttransfer.component';
+import { AuthGuard } from './auth.guard';
 import { DepositComponent } from './deposit/deposit.component';
 import { HomeComponent } from './home/home.component';
+import { ListusersComponent } from './listusers/listusers.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { RoleGuard } from './role.guard';
 import { TransactiondetailsComponent } from './transactiondetails/transactiondetails.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UsermenuComponent } from './usermenu/usermenu.component';
@@ -16,14 +21,17 @@ const routes: Routes = [
   { path: 'welcomepage', component: WelcomepageComponent },
   { path: 'userlogin', component: UserloginComponent },
   { path: 'adminlogin', component: AdminloginComponent },
-  { path: 'usermenu', component: UsermenuComponent },
+  { path: 'usermenu', component: UsermenuComponent , canActivate:[AuthGuard]},
   { path: 'registration', component: RegistrationComponent },
-  { path: 'accountdetails', component: AccountdetailsComponent },
-  { path: 'withdraw', component: WithdrawComponent },
-  { path: 'deposit', component: DepositComponent },
-  { path: 'amounttransfer', component: AmounttransferComponent },
+  { path: 'accountdetails', component: AccountdetailsComponent,canActivate:[AuthGuard] },
+  { path: 'withdraw', component: WithdrawComponent ,canActivate:[AuthGuard]},
+  { path: 'deposit', component: DepositComponent,canActivate:[AuthGuard] },
+  { path: 'amounttransfer', component: AmounttransferComponent ,canActivate:[AuthGuard]},
   { path: 'home', component: HomeComponent },
-  { path: 'transactiondetails', component: TransactiondetailsComponent },
+  { path: 'transactiondetails', component: TransactiondetailsComponent, canActivate:[AuthGuard]},
+  { path: 'listusers', component: ListusersComponent, canActivate:[AuthGuard,RoleGuard]},
+  { path: 'adminmenu', component: AdminmenuComponent, canActivate:[AuthGuard,RoleGuard]},
+  { path: 'activateuser', component: ActivateuserComponent, canActivate:[AuthGuard,RoleGuard]},
   { path: '', redirectTo: 'welcomepage', pathMatch: 'full' }
 ];
 
