@@ -8,7 +8,7 @@ import { AmounttransferComponent } from './amounttransfer/amounttransfer.compone
 import { AuthGuard } from './auth.guard';
 import { DepositComponent } from './deposit/deposit.component';
 import { HomeComponent } from './home/home.component';
-import { ListusersComponent } from './listusers/listusers.component';
+import { ListuserComponent } from './listuser/listuser.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RoleGuard } from './role.guard';
 import { TransactiondetailsComponent } from './transactiondetails/transactiondetails.component';
@@ -29,9 +29,9 @@ const routes: Routes = [
   { path: 'amounttransfer', component: AmounttransferComponent ,canActivate:[AuthGuard]},
   { path: 'home', component: HomeComponent },
   { path: 'transactiondetails', component: TransactiondetailsComponent, canActivate:[AuthGuard]},
-  { path: 'listusers', component: ListusersComponent, canActivate:[AuthGuard,RoleGuard]},
   { path: 'adminmenu', component: AdminmenuComponent, canActivate:[AuthGuard,RoleGuard]},
   { path: 'activateuser', component: ActivateuserComponent, canActivate:[AuthGuard,RoleGuard]},
+  { path: 'listuser' , component: ListuserComponent},
   { path: '', redirectTo: 'welcomepage', pathMatch: 'full' }
 ];
 
@@ -40,5 +40,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents=[UserloginComponent,AdminloginComponent,RegistrationComponent,HomeComponent,AccountdetailsComponent,WithdrawComponent,DepositComponent,AmounttransferComponent,AccountdetailsComponent,TransactiondetailsComponent,UsermenuComponent]
+export const routingComponents=[UserloginComponent,AdminloginComponent,RegistrationComponent,HomeComponent,AccountdetailsComponent,WithdrawComponent,DepositComponent,AmounttransferComponent,AccountdetailsComponent,TransactiondetailsComponent,UsermenuComponent,ListuserComponent,ActivateuserComponent]
 

@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  Name!:string;
-  MobileNumber!:string;
-  Gender!:string;
-  Age!:string;
-  Password!:string;
-  Amount!:string;
+  name!:string;
+  mobilenumber!:string;
+  gender!:string;
+  age!:string;
+  password!:string;
+  amount!:string;
 
 
   constructor(private http:HttpClient) { }
@@ -22,13 +22,12 @@ export class RegistrationComponent implements OnInit {
 
   register(){
     const userObj={
-        "accountNumber": 0,
-        "name": "tamil",
-        "age": 22,
-        "mobileNumber": "2224412223",
-        "gender": "male",
-        "amount": 1000,
-        "password": "tamil@11223344",
+        "name": this.name,
+        "age": this.age,
+        "mobileNumber": this.mobilenumber,
+        "gender": this.gender,
+        "amount": this.amount,
+        "password": this.password,
     };
     const url="http://localhost:9000/user/register";
     this.http.post(url,userObj).subscribe((res)=>{

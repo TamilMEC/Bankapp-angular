@@ -13,9 +13,9 @@ import { TransactiondetailsComponent } from './transactiondetails/transactiondet
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminmenuComponent } from './adminmenu/adminmenu.component';
-import { ListusersComponent } from './listusers/listusers.component';
 import { ActivateuserComponent } from './activateuser/activateuser.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListuserComponent } from './listuser/listuser.component';
 
 @NgModule({
   declarations: [
@@ -29,9 +29,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UsermenuComponent,
     routingComponents,
     AdminmenuComponent,
-    ListusersComponent,
     ActivateuserComponent,
-    HomeComponent
+    HomeComponent,
+    ListuserComponent
   ],
   imports: [
     FormsModule,
