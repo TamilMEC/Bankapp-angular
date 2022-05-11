@@ -1,2 +1,30 @@
 <app-usermenu></app-usermenu>
-<p>transactiondetails works!</p>
+
+<table class=table table-bordered>
+    <thead>
+        <tr>
+            <th>S.NO</th>
+            <th>Id</th>
+            <th>MOBILE NUMBER</th>
+            <th>USER ACCOUNT NUMBER</th>
+            <th>AMOUNT</th>
+            <th>TYPE</th>
+            <th>ACCOUNT NUMBER</th>
+            <th>CURRENT BALANCE</th>
+            <th>DATE & TIME</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{user.id}}</td>
+            <td>{{user.mobileNumber}}</td>
+            <td>{{user.userAccountNumber}}</td>
+            <td>{{user.amount}}</td>
+            <td>{{user.type}}</td>
+            <td>{{user.accountNumber}}</td>
+            <td>{{user.currentbalance}}</td>
+            <td>{{user.datetime}}</td>
+        </tr>
+    </tbody> 
+</table>

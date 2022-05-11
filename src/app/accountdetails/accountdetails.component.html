@@ -1,2 +1,11 @@
 <app-usermenu></app-usermenu>
-account details
+
+<div *ngIf="users != null" id="userdetails">
+<label>ACCOUNT NUMBER : {{users.accountNumber}}</label><br>
+<label>NAME : {{users.name}}</label><br>
+<label>AGE : {{users.age}}</label><br>
+<label>MOBILE NUMBER : {{users.mobileNumber}}</label><br>
+<label>GENDER : {{users.gender}}</label><br>
+<label>ACCOUNT BALANCE : {{users.amount}}</label><br>
+<label>STATUS : {{users.status}}</label><br>
+</div>

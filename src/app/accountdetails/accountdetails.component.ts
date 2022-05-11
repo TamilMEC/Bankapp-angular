@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,20 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accountdetails.component.css']
 })
 export class AccountdetailsComponent implements OnInit {
-  ds: any;
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getAllUsers();
   }
-  
+  users: any;
+  getAllUsers() {
+    const userObj = {
+      mobileNumber: "7871270126",
+      password: "tamil123"
+    };
+    const url = "http://localhost:9000/user/accountdetails";
+    this.http.post(url,userObj,{responseType:"json"}).subscribe((res)=>{
+      this.users=res;
+    },err=>{
+      alert("no users found");
+    })
   }
-
-
-  
-
-
-function ngOnInit() {
-  throw new Error('Function not implemented.');
 }
 

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-userlogin',
@@ -7,25 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userlogin.component.css']
 })
 export class UserloginComponent implements OnInit {
-  MobileNumber!: string;
-  Password!: string;
-  constructor(private http: HttpClient) { }
+  mobilenumber!: string;
+  password!: string;
+  constructor(private http: HttpClient,private toastr:ToastrService) { }
 
   ngOnInit(): void {
   }
   login() {
     const userObj = {
-      "mobileNumber": "2224412223",
-      "password": "tamil@11223344",
+      "mobileNumber": this.mobilenumber,
+      "password": this.password,
     };
     const url = "http://localhost:9000/user/login";
     this.http.post(url,userObj).subscribe((res) => {
-      console.log(res);
-      alert("successfully logined");
+      this.toastr.success("successfully logined");
       window.location.href="http://localhost:4200/usermenu";
     }, (err) => {
-      console.log(err);
-      alert("Please re-enter your Details");
+      this.toastr.error("Try after sometimes");
     })
   }
 

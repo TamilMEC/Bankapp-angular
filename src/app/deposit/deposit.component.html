@@ -1,2 +1,9 @@
 <app-usermenu></app-usermenu>
-<p>deposit works!</p>
+<form  (ngSubmit)="deposit()">
+    <h3>DEPOSIT</h3>
+    <div>
+    <label>Enter the amount</label>
+    <input type="number" required>
+    </div>
+    <button type="submit">Proceed</button>
+    </form>

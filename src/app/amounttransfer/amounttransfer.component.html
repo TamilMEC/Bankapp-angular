@@ -1,2 +1,13 @@
 <app-usermenu></app-usermenu>
-<p>amounttransfer works!</p>
+<form  (ngSubmit)="transfer()">
+    <h3>Transfer</h3>
+    <div>
+        <label>Enter the account number</label>
+        <input type="number" required>
+        </div>
+    <div>
+    <label>Enter the amount</label>
+    <input type="number" required>
+    </div>
+    <button type="submit">Proceed</button>
+    </form>

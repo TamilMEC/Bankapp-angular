@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-adminlogin',
@@ -7,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adminlogin.component.css']
 })
 export class AdminloginComponent implements OnInit {
-  MobileNumber!: string;
-  Password!: string;
+  mobilenumber!: string;
+  password!: string;
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private toastr: ToastrService) { }
   
 
   ngOnInit(): void {
@@ -18,18 +20,18 @@ export class AdminloginComponent implements OnInit {
 
   login() {
     const userObj = {
-      "mobileNumber": "7871170126",
-      "password": "admin123",
+      "mobileNumber": this.mobilenumber,
+      "password": this.password,
     };
     const url = "http://localhost:9000/admin/login";
     this.http.post(url,userObj).subscribe((res) => {
       console.log(res);
-      alert("successfully logined");
+      this.toastr.success("successfully logined");
+     
       window.location.href="http://localhost:4200/adminmenu";
     }, (err) => {
       console.log(err);
-      alert("Please re-enter your Details");
+      this.toastr.error("Invalid crendentials");
     }) 
   }
-
 }

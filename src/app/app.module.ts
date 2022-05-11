@@ -16,6 +16,8 @@ import { AdminmenuComponent } from './adminmenu/adminmenu.component';
 import { ActivateuserComponent } from './activateuser/activateuser.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListuserComponent } from './listuser/listuser.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { ListuserComponent } from './listuser/listuser.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

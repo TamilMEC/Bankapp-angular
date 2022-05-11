@@ -4,11 +4,11 @@
         <h2>Admin Login</h2>
         <form (ngSubmit)="login()">
             <div class="user-box">
-                <input type="text" id="mobilenumber" name="mobilenumber" >
+                <input type="text" id="mobilenumber" name="mobilenumber" [(ngModel)]="mobilenumber" required>
                 <label>Mobile Number</label>
             </div>
             <div class="user-box">
-                <input type="password" id="password" name="password" >
+                <input type="password" id="password" name="password" [(ngModel)]="password" required>
                 <label>Password</label>
             </div>
             <button type="submit" id="submitbutton">

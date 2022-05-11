@@ -19,6 +19,7 @@ export class ListuserComponent implements OnInit {
     const url = "http://localhost:9000/admin/listusers";
     this.http.get(url).subscribe((res)=>{
       this.user=res;
+      console.log(res);
     },err=>{
       alert("no users found");
     })

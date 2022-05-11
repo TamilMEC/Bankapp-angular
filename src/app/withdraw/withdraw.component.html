@@ -1,2 +1,9 @@
 <app-usermenu></app-usermenu>
-<p>withdraw works!</p>
+<form  (ngSubmit)="withdraw()">
+<h3>WITHDRAW</h3>
+<div>
+<label>Enter the amount</label>
+<input type="number" required>
+</div>
+<button type="submit">WITHDRAW</button>
+</form>

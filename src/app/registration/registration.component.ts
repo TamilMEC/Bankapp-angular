@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-registration',
@@ -15,7 +16,7 @@ export class RegistrationComponent implements OnInit {
   amount!:string;
 
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private toastr:ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -32,10 +33,11 @@ export class RegistrationComponent implements OnInit {
     const url="http://localhost:9000/user/register";
     this.http.post(url,userObj).subscribe((res)=>{
       console.log(res);
-      alert("successfully Registered");
+      this.toastr.success("successfully Registered");
+      window.location.href="http://localhost:4200/userlogin";
     },(err)=>{
       console.log(err);
-      alert("Please re-enter your Details");
+      this.toastr.error("Invalid Credentials");
     })
   }
 
