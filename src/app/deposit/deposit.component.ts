@@ -8,6 +8,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./deposit.component.css']
 })
 export class DepositComponent implements OnInit {
+  amount: any;
 
   constructor(private http:HttpClient,private toastr:ToastrService) { }
 
@@ -15,9 +16,12 @@ export class DepositComponent implements OnInit {
   }
 
   deposit(){
+
+    let number = localStorage.getItem('mobileNumber');
+
     const userObj = {
-      amount:888,
-      mobileNumber: "7871270126",
+      amount:this.amount,
+      mobileNumber: number,
     };
     const url="http://localhost:9000/user/deposit";
     this.http.post(url,userObj).subscribe((res)=>{

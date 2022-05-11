@@ -2,11 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-activateuser',
-  templateUrl: './activateuser.component.html',
-  styleUrls: ['./activateuser.component.css']
+  selector: 'app-deleteuser',
+  templateUrl: './deleteuser.component.html',
+  styleUrls: ['./deleteuser.component.css']
 })
-export class ActivateuserComponent implements OnInit {
+export class DeleteuserComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
 
@@ -25,32 +25,18 @@ export class ActivateuserComponent implements OnInit {
     })
   }
 
-  activateuser(number:any){
+  deleteuser(number:any){
     const numberObj={
       "mobileNumber" : number,
     };
-    const url = "http://localhost:9000/admin/activateuser";
+    const url = "http://localhost:9000/account/delete";
     this.http.post(url,numberObj).subscribe((res)=>{
       console.log(res);
       alert("success");
-      window.location.reload();
     },err=>{
-      alert("Something went wrong");
+      alert("Try again later");
     })
     
-  }
-
-  inactivateuser(number:any){
-    const numberObj={
-      "mobileNumber" : number,
-    };
-    const url = "http://localhost:9000/admin/inactivateuser";
-    this.http.post(url,numberObj).subscribe((res)=>{
-      console.log(res);
-    },err=>{
-      alert("Something went wrong");
-    }) 
-   
   }
 
 }

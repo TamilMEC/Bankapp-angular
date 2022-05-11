@@ -6,6 +6,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminmenuComponent } from './adminmenu/adminmenu.component';
 import { AmounttransferComponent } from './amounttransfer/amounttransfer.component';
 import { AuthGuard } from './auth.guard';
+import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { DepositComponent } from './deposit/deposit.component';
 import { HomeComponent } from './home/home.component';
 import { ListuserComponent } from './listuser/listuser.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'adminmenu', component: AdminmenuComponent, canActivate:[AuthGuard,RoleGuard]},
   { path: 'activateuser', component: ActivateuserComponent, canActivate:[AuthGuard,RoleGuard]},
   { path: 'listuser' , component: ListuserComponent},
+  { path: 'deleteuser' , component: DeleteuserComponent},
   { path: '', redirectTo: 'welcomepage', pathMatch: 'full' }
 ];
 
@@ -40,5 +42,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents=[UserloginComponent,AdminloginComponent,RegistrationComponent,HomeComponent,AccountdetailsComponent,WithdrawComponent,DepositComponent,AmounttransferComponent,AccountdetailsComponent,TransactiondetailsComponent,UsermenuComponent,ListuserComponent,ActivateuserComponent]
+export const routingComponents=[UserloginComponent,AdminloginComponent,RegistrationComponent,HomeComponent,AccountdetailsComponent,WithdrawComponent,DepositComponent,AmounttransferComponent,AccountdetailsComponent,TransactiondetailsComponent,UsermenuComponent,ListuserComponent,ActivateuserComponent,DeleteuserComponent]
 

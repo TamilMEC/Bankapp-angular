@@ -26,12 +26,11 @@ export class AdminloginComponent implements OnInit {
     const url = "http://localhost:9000/admin/login";
     this.http.post(url,userObj).subscribe((res) => {
       console.log(res);
-      this.toastr.success("successfully logined");
-     
+      this.toastr.success("Login successfull");
       window.location.href="http://localhost:4200/adminmenu";
     }, (err) => {
-      console.log(err);
-      this.toastr.error("Invalid crendentials");
+      console.log(err.error.message);
+      this.toastr.error(err.error.message);
     }) 
   }
 }

@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 export class UserloginComponent implements OnInit {
   mobilenumber!: string;
   password!: string;
+  data!: string;
   constructor(private http: HttpClient,private toastr:ToastrService) { }
 
   ngOnInit(): void {
@@ -19,13 +20,20 @@ export class UserloginComponent implements OnInit {
       "mobileNumber": this.mobilenumber,
       "password": this.password,
     };
+    localStorage.setItem('mobileNumber', (this.mobilenumber));
+    localStorage.setItem('password', (this.password));
+    
     const url = "http://localhost:9000/user/login";
     this.http.post(url,userObj).subscribe((res) => {
-      this.toastr.success("successfully logined");
+      console.log(res);
+      this.toastr.success("Login successfull");
       window.location.href="http://localhost:4200/usermenu";
     }, (err) => {
-      this.toastr.error("Try after sometimes");
+      console.log(err.error.message);
+      this.toastr.error(err.error.message);
     })
   }
 
 }
+
+

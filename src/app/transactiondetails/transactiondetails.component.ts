@@ -15,8 +15,9 @@ export class TransactiondetailsComponent implements OnInit {
   }
   users: any;
   getAllUsers() {
+    let number = localStorage.getItem('mobileNumber');
     const userObj = {
-      mobileNumber: "7871270126"
+      mobileNumber: number
     };
     const url = "http://localhost:9000/user/transaction";
     this.http.post(url,userObj,{responseType:"json"}).subscribe((res)=>{

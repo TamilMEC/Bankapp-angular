@@ -37,7 +37,7 @@ export class RegistrationComponent implements OnInit {
       window.location.href="http://localhost:4200/userlogin";
     },(err)=>{
       console.log(err);
-      this.toastr.error("Invalid Credentials");
+      this.toastr.error("Something went wrong");
     })
   }
 

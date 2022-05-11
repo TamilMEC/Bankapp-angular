@@ -1,13 +1,13 @@
 <app-usermenu></app-usermenu>
-<form  (ngSubmit)="transfer()">
+<form (ngSubmit)="transfer()">
     <h3>Transfer</h3>
     <div>
         <label>Enter the account number</label>
-        <input type="number" required>
-        </div>
+        <input type="number" [(ngModel)]="accountNumber" required>
+    </div>
     <div>
-    <label>Enter the amount</label>
-    <input type="number" required>
+        <label>Enter the amount</label>
+        <input type="number" [(ngModel)]="amount" required>
     </div>
     <button type="submit">Proceed</button>
-    </form>
+</form>

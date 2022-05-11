@@ -8,15 +8,18 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./withdraw.component.css']
 })
 export class WithdrawComponent implements OnInit {
+  amount: any;
   constructor(private http:HttpClient,private toastr:ToastrService) { }
 
   ngOnInit(): void {
   }
-
+ 
   withdraw(){
+    let number = localStorage.getItem('mobileNumber');
+   
     const userObj = {
-      amount:100,
-      mobileNumber: "7871270126",
+      amount:this.amount,
+      mobileNumber: number,
     };
     const url="http://localhost:9000/user/withdraw";
     this.http.post(url,userObj).subscribe((res)=>{
@@ -28,3 +31,7 @@ export class WithdrawComponent implements OnInit {
     })
   }
 }
+function withdraw() {
+  throw new Error('Function not implemented.');
+}
+

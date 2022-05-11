@@ -1,5 +1,8 @@
 <app-adminmenu></app-adminmenu>
 
+
+
+
 <table class=table table-bordered>
     <thead>
         <tr>
@@ -27,8 +30,7 @@
             <td>{{users.role}}</td>
             <td>{{users.status}}</td>
             <td> 
-                <button type="submit" (click)="activateuser(users.mobileNumber)">Activate</button>
-                <button type="submit" (click)="inactivateuser(users.mobileNumber)">Inactive</button>
+                <button type="submit" (click)="deleteuser(users.mobileNumber)">DELETE</button>
             </td>
         </tr>
     </tbody>

@@ -8,6 +8,8 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./amounttransfer.component.css']
 })
 export class AmounttransferComponent implements OnInit {
+  accountNumber: any;
+  amount: any;
 
   constructor(private http:HttpClient,private toastr:ToastrService) { }
 
@@ -15,10 +17,11 @@ export class AmounttransferComponent implements OnInit {
   }
 
   transfer(){
+    let number = localStorage.getItem('mobileNumber');
     const userObj = {
-      accountNumber:663264,
-      amount:888,
-      mobileNumber: "7871270126",
+      accountNumber:this.accountNumber,
+      amount:this.amount,
+      mobileNumber: number,
     };
     const url="http://localhost:9000/user/amounttransfer";
     this.http.post(url,userObj).subscribe((res)=>{
