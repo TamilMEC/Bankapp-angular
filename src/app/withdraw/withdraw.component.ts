@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./withdraw.component.css']
 })
 export class WithdrawComponent implements OnInit {
-  amount: any;
+  amount!:any;
   constructor(private http:HttpClient,private toastr:ToastrService) { }
 
   ngOnInit(): void {
@@ -18,16 +18,15 @@ export class WithdrawComponent implements OnInit {
     let number = localStorage.getItem('mobileNumber');
    
     const userObj = {
-      amount:this.amount,
+      "amount" : this.amount,
       mobileNumber: number,
     };
     const url="http://localhost:9000/user/withdraw";
     this.http.post(url,userObj).subscribe((res)=>{
-      console.log(res);
       this.toastr.success("Withdraw successfull");
     },(err)=>{
-      console.log(err);
-      this.toastr.error("Invalid Credentials");
+      console.log(err.error.message);
+      this.toastr.error(err.error.message);
     })
   }
 }

@@ -32,7 +32,6 @@ export class ActivateuserComponent implements OnInit {
     const url = "http://localhost:9000/admin/activateuser";
     this.http.post(url,numberObj).subscribe((res)=>{
       console.log(res);
-      alert("success");
       window.location.reload();
     },err=>{
       alert("Something went wrong");
@@ -47,6 +46,7 @@ export class ActivateuserComponent implements OnInit {
     const url = "http://localhost:9000/admin/inactivateuser";
     this.http.post(url,numberObj).subscribe((res)=>{
       console.log(res);
+      window.location.reload();
     },err=>{
       alert("Something went wrong");
     }) 

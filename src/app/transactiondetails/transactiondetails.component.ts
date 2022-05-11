@@ -23,9 +23,8 @@ export class TransactiondetailsComponent implements OnInit {
     this.http.post(url,userObj,{responseType:"json"}).subscribe((res)=>{
       this.users=res;
       console.log(res);
-      alert("success");
     },err=>{
-      alert("no users found");
+      alert("no data found");
     })
   }
 

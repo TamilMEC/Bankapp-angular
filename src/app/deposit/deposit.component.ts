@@ -20,16 +20,16 @@ export class DepositComponent implements OnInit {
     let number = localStorage.getItem('mobileNumber');
 
     const userObj = {
-      amount:this.amount,
+      "amount":this.amount,
       mobileNumber: number,
     };
     const url="http://localhost:9000/user/deposit";
     this.http.post(url,userObj).subscribe((res)=>{
       console.log(res);
-      this.toastr.success("Withdraw successfull");
+      this.toastr.success("Deposit successfull");
     },(err)=>{
-      console.log(err);
-      this.toastr.error("Invalid Credentials");
+      console.log(err.error.message);
+      this.toastr.error(err.error.message);
     })
   }
 

@@ -1,9 +1,9 @@
 <app-usermenu></app-usermenu>
-<form  (ngSubmit)="withdraw()">
+<form ngNativeValidate (ngSubmit)="withdraw()">
 <h3>WITHDRAW</h3>
 <div>
 <label>Enter the amount</label>
-<input type="number" [(ngModel)]="amount" required>
+<input type="number" [(ngModel)]="amount" name="amount" required>
 </div>
 <button type="submit">WITHDRAW</button>
 </form>

@@ -19,17 +19,17 @@ export class AmounttransferComponent implements OnInit {
   transfer(){
     let number = localStorage.getItem('mobileNumber');
     const userObj = {
-      accountNumber:this.accountNumber,
-      amount:this.amount,
+      "accountNumber":this.accountNumber,
+      "amount":this.amount,
       mobileNumber: number,
     };
     const url="http://localhost:9000/user/amounttransfer";
     this.http.post(url,userObj).subscribe((res)=>{
       console.log(res);
-      this.toastr.success("Withdraw successfull");
+      this.toastr.success("Transfered successfull");
     },(err)=>{
       console.log(err);
-      this.toastr.error("Invalid Credentials");
+      this.toastr.error(err.error.message);
     })
   }
 }
