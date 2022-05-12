@@ -15,5 +15,9 @@ export class UsermenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
+ logout(){
+   localStorage.clear();
+   window.location.href="http://localhost:4200/welcomepage";
+ }
 
 }

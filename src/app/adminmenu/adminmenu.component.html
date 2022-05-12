@@ -1,4 +1,3 @@
-
 <div id="heading">
     <img [src]="ImagePath" width="30" height="30">
     <a> BANK-APP</a>
@@ -7,7 +6,7 @@
     <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
         <nav class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-              
+
                 <li class="nav-item active">
                     <a class="nav-link" routerLink="/listuser" routerLinkAction="active">LIST USERS</a>
                 </li>
@@ -19,7 +18,9 @@
                 </li>
             </ul>
         </nav>
-        <a class="btn btn-outline-success my-2 my-sm-0" routerLink="/welcomepage" id="logout">LOG-OUT</a>
+        <button type="submit" (click)="logout()" class="btn btn-outline-success my-2 my-sm-0"
+            id="logout">LOG-OUT</button>
+
     </nav>
 </div>
 
