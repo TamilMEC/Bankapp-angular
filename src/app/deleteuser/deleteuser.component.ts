@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-deleteuser',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./deleteuser.component.css']
 })
 export class DeleteuserComponent implements OnInit {
+  toastrservice: any;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getAllUsers();
@@ -25,18 +27,38 @@ export class DeleteuserComponent implements OnInit {
     })
   }
 
+
   deleteuser(number:any){
     const numberObj={
       "mobileNumber" : number,
     };
+    let cfm = confirm("Do you want to Delete the user ?");
+    if(cfm){
     const url = "http://localhost:9000/account/delete";
     this.http.post(url,numberObj).subscribe((res)=>{
       console.log(res);
-      alert("success");
+      this.toastr.success("User deleted successfull");
+      window.location.reload();
     },err=>{
       alert("Try again later");
     })
     
   }
-
 }
+}
+
+
+
+  // deletecake(id:any){;
+  //   let cfm = confirm("Do you want to Delete the user ?");
+  //   if(cfm){
+  //   const url="http://localhost:8080/account/delete" + id;
+  //   this.http.delete(url).subscribe((res)=>{
+  //     console.log(res);
+  //     this.toastrservice.success("user deleted successfully");
+     
+  //   },(err)=>{
+  //     this.toastrservice.error("Error occured");
+  //   })
+  // }
+

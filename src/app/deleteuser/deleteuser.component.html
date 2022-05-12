@@ -29,9 +29,12 @@
             <td>{{users.amount}}</td>
             <td>{{users.role}}</td>
             <td>{{users.status}}</td>
-            <td> 
+            <!-- <td> 
                 <button type="submit" (click)="deleteuser(users.mobileNumber)">DELETE</button>
-            </td>
+                
+            </td> -->
+            <td><button type="button" (click)="deleteuser(users.mobileNumber)"class="btn-danger"> DELETE</button></td>
         </tr>
     </tbody>
 </table>
+
